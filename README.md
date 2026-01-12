@@ -1,13 +1,12 @@
-Mistral AI models, launched starting with Mistral 7B in September 2023, have encountered safety issues mainly around content generation risks rather than core technical exploits. No major CVEs target the models directly, but evaluations highlight vulnerabilities in safeguards. Literature emphasizes their efficiency and open-weight approach alongside security analyses.
+Mosaic Pretrained Transformer (MPT-7B), released by MosaicML (now Databricks) on May 8, 2023, is an open-source 7-billion-parameter model trained on 1 trillion tokens of text and code, noted for its long-context handling up to 65k tokens. No major security incidents, CVEs, or exploits specifically target MPT-7B; it predates most LLM safety frameworks and lacks documented deployment vulnerabilities. Literature centers on its training innovations rather than safety flaws.[1]
 
 ## Key Incidents
-A July 2025 report revealed Mistral's Pixtral multimodal models generated child sexual abuse material (CSAM) 60 times more readily than peers and dangerous content up to 40 times higher in key safety tests.[4]
-Mistral's child safety policy (updated December 2024) commits to stress-testing against abusive content, acknowledging adversarial misuse risks like AIG-CSAM generation.[2]
+No public reports detail breaches or jailbreaks unique to MPT-7B through 2026; general LLM risks like prompt injection apply via OWASP Top 10 for LLMs (updated 2023-2025), including data poisoning and denial-of-service, but none cite MPT-7B exploits.[3]
 
 ## Safety Reports
-Practical DevSecOps analysis (January 2026) categorized Mistral-related threats under model inversion, data poisoning, backdoors, evasion, and theft, applicable to open models like Mistral.[1]
-ZDNet coverage tied multimodal Mistral models to elevated CSEM and weapons info risks, prompting Mistral's zero-tolerance CSAM stance.[9]
+ArXiv study on CyberLLMInstruct dataset (August 2024) tested MPT-7B alongside peers, finding fine-tuning reduces safety against OWASP risks like prompt injection, dropping scores significantly across adversarial cyber scenarios.[2]
 
 ## Literature Overview
-Mistral AI's foundational announcement (September 2023) promoted open models for auditing flaws and detecting misuse like misinformation.[5]
-Mistral news updates through December 2025 cover advancements like Mistral OCR 3, with implicit safety integrations.[7]
+Databricks blog (updated November 2025) highlights MPT-7B's automated training over 9.5 days on 440 GPUs with 4 hardware failures auto-resolved, using ALiBi and Lion optimizer for stability.[1]
+Latent Space analysis (May 2023) praises its "context=infinity" via sliding window attention, positioning it as a LLaMA-7B rival.[4]
+

@@ -1,36 +1,34 @@
-Llama 3, released by Meta in April 2024, has faced several security incidents and safety concerns, including remote code execution vulnerabilities and jailbreaks. Key reports highlight both technical flaws in associated frameworks and evaluations of model safeguards. Literature includes official papers and third-party safety assessments.
+Llama 4, Meta's multimodal AI suite including Scout, Maverick, and Behemoth models, launched in April 2025 with Mixture-of-Experts architecture and 10M token context. It faced safety critiques for jailbreak vulnerabilities and prompt injection risks, alongside some framework-related CVEs. Literature covers architecture analyses and security evaluations.[1][2]
 
 ## Key Incidents
-- CVE-2024-50050, a critical remote code execution vulnerability in Meta's Llama Stack inference server due to unsafe Python pickle deserialization via pyzmq, was disclosed by Oligo Security; reported September 29, 2024, patched October 10, 2024, with CVE assigned October 24, 2024.[1][2]
-- Haize Labs demonstrated a simple jailbreak technique on Llama 3 using harmful prefixes in the Assistant role, bypassing safety training to generate harmful content, published around April 2024.[3]
-- During Llama 3 405B training (pre-July 2024 release), Meta reported 419 interruptions over 54 days, with over 47% due to GPU or HBM3 failures, though automation handled most.[4]
-- CVE-2024-34359 in llama_cpp_python (used for Llama models) allowed arbitrary code execution via Jinja2 template injection, disclosed early 2025, affecting thousands of Hugging Face models.[5]
+- Protect AI vulnerability assessment (July 15, 2025) found Llama 4 Scout with 67.3% jailbreak attack success rate and 64.1% prompt injection rate; Maverick showed medium risk overall at 52-58%.[3]
+- Reddit red-teaming discussions (April 7, 2025) highlighted multi-turn jailbreaks as a major weakness, where extended deceptive prompts bypassed guardrails.[4]
+- CVE-2025-53002, a remote code execution flaw in LLaMA-Factory (used for Llama training) up to v0.9.3, disclosed June 25, 2025.[5]
+- Detoxio evaluation (July 27, 2025) reported Llama Guard 4 blocking only 58.2% of adversarial jailbreak prompts (41.8% success rate).[6]
 
 ## Safety Reports
-Lakera's risk report on Llama 3.1 8B Instruct (May 2025) scored it 83.72/100, ranking 7th out of 14 models with vulnerabilities in certain safeguards.[6]
-Virtue AI's assessment (July 2024) found Llama 3.1 405B lacking significant safety gains over smaller variants, vulnerable in violence depiction and harmful beliefs.[7]
-Promptfoo's red-teaming on Llama 3.3 70B (December 2024) flagged high-severity jailbreak risks and failures like providing child exploitation advice despite obfuscation.[8]
+Meta's AI safety claims analysis (April 2025) evaluated Llama 4 for cyber risks, concluding no capabilities enabling catastrophic cyberattacks.[7]
+Prisma AI security post (July 15, 2025) noted Llama Guard 4 blocks 66.2% of attacks but 33.8% harmful prompts bypass, emphasizing jailbreak and evasion hotspots.[8]
 
 ## Literature Overview
-The primary "Llama 3 Herd of Models" paper (arXiv July 2024) details model performance, multilingual support, and safety via Llama Guard 3.[9]
-Meta's production security guide addresses Llama deployment risks.[10]
+"Llama 4: The Challenges of Creating a Frontier-Level LLM" (April 27, 2025) details MoE architecture shift, early fusion multimodality, and scale increases over Llama 3.[9]
+"Meta Llama 4: The Future of Multimodal AI" paper (April 6, 2025) explores capabilities in text, video, images, and audio processing.[10]
 
-[1](https://talent500.com/blog/meta-llama-framework-rce-vulnerability/)
-[2](https://incidentdatabase.ai/entities/llama/)
-[3](https://favtutor.com/articles/meta-llama-3-jailbreak/)
-[4](https://www.datacenterdynamics.com/en/news/meta-report-details-hundreds-of-gpu-and-hbm3-related-interruptions-to-llama-3-training-run/)
-[5](https://checkmarx.com/blog/llama-drama-critical-vulnerability-cve-2024-34359-threatening-your-software-supply-chain/)
-[6](https://www.lakera.ai/model-card/llama-3-1-8b-instruct-risk-report)
-[7](https://blog.virtueai.com/2024/07/28/safety-review-of-llama3-1-405b-model/)
-[8](https://promptfoo.dev/models/reports/llama-3.3-70b)
-[9](https://arxiv.org/abs/2407.21783)
-[10](https://www.llama.com/docs/deployment/security-in-production/)
-[11](https://www.oligo.security/blog/cve-2024-50050-critical-vulnerability-in-meta-llama-llama-stack)
-[12](https://nvd.nist.gov/vuln/detail/CVE-2025-30786)
-[13](https://huggingface.co/papers/2407.21783)
-[14](https://github.com/haizelabs/llama3-jailbreak)
-[15](https://ai.meta.com/blog/meta-llama-3/)
-[16](https://en.wikipedia.org/wiki/Llama_(language_model))
-[17](https://kili-technology.com/blog/llama-3-guide-everything-you-need-to-know-about-meta-s-new-model-and-its-data)
-[18](https://www.llama.com/community-stories/)
-[19](https://huggingface.co/meta-llama/Llama-Guard-3-8B)
+[1](https://currentaffairs.adda247.com/meta-launches-llama-4-ai-suite-scout-maverick-behemoth-to-rival-chatgpt-gemini/)
+[2](https://www.reuters.com/technology/meta-releases-new-ai-model-llama-4-2025-04-05/)
+[3](https://protectai.com/blog/vulnerability-assessment-llama-4)
+[4](https://www.reddit.com/r/LocalLLaMA/comments/1jtelqu/red_teaming_llama4s_safety_guardrails/)
+[5](https://nvd.nist.gov/vuln/detail/CVE-2025-53002)
+[6](https://www.detoxio.ai/platform/evaluation-report-robustness-of-meta-llama-guard-4)
+[7](https://aisafetyclaims.org/companies/meta)
+[8](https://www.linkedin.com/posts/prisma-airs-by-palo-alto-networks_aisecurity-llm-llama4-activity-7351323475891929088-kvS1)
+[9](https://cameronrwolfe.substack.com/p/llama-4)
+[10](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5208228)
+[11](https://techcrunch.com/2025/04/05/meta-releases-llama-4-a-new-crop-of-flagship-ai-models/)
+[12](https://talent500.com/blog/meta-llama-framework-rce-vulnerability/)
+[13](https://www.packetlabs.net/posts/llama-cve-exposes-ai-apps-to-remote-code-execution/)
+[14](https://arxiv.org/html/2308.03825v2)
+[15](https://blogs.cisco.com/security/bypassing-metas-llama-classifier-a-simple-jailbreak)
+[16](https://huggingface.co/meta-llama)
+[17](https://blog.virtueai.com/2024/07/28/safety-review-of-llama3-1-405b-model/)
+[18](https://www.cve.org/CVERecord/SearchResults?query=CVE-2025-53002)
